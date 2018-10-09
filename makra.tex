@@ -1,0 +1,34 @@
+\newcommand{\topic}[3][]{
+	\ifthenelse{\isempty{#1}}{\chapter{#2}}{\chapter[#1]{#2}}
+	\ifcsname c@ot\endcsname
+		\setcounter{ot}{1}
+	\else
+		\newcounter{ot}
+	\fi
+	\forloop{ot}{1}{\value{ot} < #3 \OR \value{ot} = #3}{
+		\IfFileExists{questions/\thepart/\thechapter/\arabic{ot}.tex}{\input{questions/\thepart/\thechapter/\arabic{ot}}}{}
+	}
+}
+
+\makeatletter
+\define@key{question}{name}{\def\q@name{#1}}
+\define@key{question}{shortname}{\def\q@shortname{#1}}
+\define@key{question}{authors}{\def\q@authors{#1}}
+
+\newenvironment{question}[1][]{
+	\setkeys{question}{#1}
+	\ifcsname q@authors\endcsname
+		\def\qname{\q@name \\ \footnotesize (\q@authors)}
+	\else
+		\def\qname{\q@name}
+	\fi
+	\ifcsname q@shortname\endcsname
+		\section[\q@shortname]{\qname}
+	\else
+		\section{\qname}
+	\fi
+%	\ifthenelse{\isempty{\q@authors}}{\def\qname{\q@name}}{\def\qname{\q@name \\ \footnotesize (\q@authors)}}
+%	\newpage
+%	\ifthenelse{\isempty{\q@shortname}}{\section{\q@name}}{\section[\q@shortname]{\q@name}}
+}{}
+\makeatother
