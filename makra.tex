@@ -6,6 +6,7 @@
 		\newcounter{ot}
 	\fi
 	\forloop{ot}{1}{\value{ot} < #3 \OR \value{ot} = #3}{
+		\ifthenelse{\value{ot} = 1}{}{\newpage}
 		\IfFileExists{questions/\thepart/\thechapter/\arabic{ot}.tex}{\input{questions/\thepart/\thechapter/\arabic{ot}}}{}
 	}
 }

@@ -3,7 +3,7 @@
 all: statnice.pdf
 
 # LaTeX je potreba spustit nekolikrat, aby spravne spocital odkazy
-statnice.pdf: statnice.tex $(wildcard questions/*/*/*.tex)
+statnice.pdf: statnice.tex $(wildcard questions/*/*/*.tex) $(wildcard *.tex)
 	pdflatex $<
 #	bibtex statnice
 	pdflatex $<
