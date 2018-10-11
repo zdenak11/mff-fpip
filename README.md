@@ -6,10 +6,10 @@ Skripta ke státnicovým otázkám pro navazující magisterský program FPIP na
 
 ## Rozložení souborů
 
-otázky se ukládají do složek: questions/{skupina}/{okruh}/{otázka}.tex, kde:
-{skupina}: I (Společné požadavky), nebo II (Užší zaměření),
-{okruh}: číslo okruhu podle oranžové karolínky
-{otázka}: pořadí otázky v daném okruhu
+otázky se ukládají do složek: `questions/{skupina}/{okruh}/{otázka}.tex`, kde:
+  - `{skupina}`: I (Společné požadavky), nebo II (Užší zaměření),
+  - `{okruh}`: číslo okruhu podle oranžové karolínky
+  - `{otázka}`: pořadí otázky v daném okruhu
 
 ## Zápis otázek
 
