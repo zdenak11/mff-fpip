@@ -12,6 +12,10 @@
 }
 
 \makeatletter
+\@addtoreset{chapter}{part}
+\makeatother
+
+\makeatletter
 \define@key{question}{name}{\def\q@name{#1}}
 \define@key{question}{shortname}{\def\q@shortname{#1}}
 \define@key{question}{authors}{\def\q@authors{#1}}
